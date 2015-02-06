@@ -76,6 +76,6 @@ TEMPLATES += [
 ]
 
 SLACK_TOKEN = os.environ.get('MARVIN_SLACK_TOKEN')
-SLACK_CHANNELS = 'marvin-dev'
+SLACK_CHANNELS = '#marvin-dev'
 if not SLACK_TOKEN:
     raise Exception("You must specify the variable MARVIN_SLACK_TOKEN in your environment.")
