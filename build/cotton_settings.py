@@ -39,7 +39,7 @@ PROJECT_GROUP = 'marvin'
 #
 PIP_REQUIREMENTS_PATH += [COTTON_PATH + '/../requirements/pip.txt']
 APT_REQUIREMENTS_PATH += [COTTON_PATH + '/../requirements/apt.txt']
-NPM_REQUIREMENTS_PATH += [COTTON_PATH + '/../requirements/npm.txt']
+NPM_REQUIREMENTS_PATH = [COTTON_PATH + '/../requirements/npm.txt']
 
 # If True, do not prompt for confirmation of dangerous actions. Required for unattended operation,
 # but dangerous in mixed (ie, dev/testing) environments, so disabled by default.
@@ -70,10 +70,12 @@ ENSURE_RUNNING = []
 TEMPLATES += [
     {
         "name": "defaults",
-        "local_path": COTTON_PATH + "../templates/defaults",
+        "local_path": COTTON_PATH + "/../templates/defaults",
         "remote_path": "/etc/default/marvin",
     },
 ]
 
 SLACK_TOKEN = os.environ.get('MARVIN_SLACK_TOKEN')
 SLACK_CHANNELS = 'marvin-dev'
+if not SLACK_TOKEN:
+    raise Exception("You must specify the variable MARVIN_SLACK_TOKEN in your environment.")
