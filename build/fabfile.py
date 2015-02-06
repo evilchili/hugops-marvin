@@ -18,6 +18,10 @@ def init():
 
     cotton.upload_template_and_reload('defaults')
 
+    # make a directory to hold the file-brain
+    cotton.sudo("mkdir -p /var/hubot")
+    cotton.sudo("chown marvin:marvin /var/hubot")
+
 
 @task
 def ship():
