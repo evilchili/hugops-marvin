@@ -67,4 +67,13 @@ ENSURE_RUNNING = []
 #
 # Here is an example for a hypothetical crontab used to execute scheduled tasks for your app:
 #
-TEMPLATES += []
+TEMPLATES += [
+    {
+        "name": "defaults",
+        "local_path": COTTON_PATH + "../templates/defaults",
+        "remote_path": "/etc/default/marvin",
+    },
+]
+
+SLACK_TOKEN = os.environ.get('MARVIN_SLACK_TOKEN')
+SLACK_CHANNELS = 'marvin-dev'

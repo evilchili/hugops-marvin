@@ -1,0 +1,3 @@
+# defaults for marvin the hubot bot
+export HUBOT_SLACK_TOKEN=%(slack_token)s 
+export HUBOT_SLACK_ROOMS=%(slack_channels)s
