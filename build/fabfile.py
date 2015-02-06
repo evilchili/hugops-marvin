@@ -1,4 +1,4 @@
-from fabric.api import task, env, cd
+from fabric.api import task  # , env, cd
 
 # import the fabric tasks and templates from cotton
 import cotton.fabfile as cotton
@@ -12,13 +12,11 @@ def init():
     """
     Initialize the app deployment
     """
-    cotton.create_project()
+    cotton.install()
+    #cotton.create_project()
     cotton.install_iojs()
 
-    with cotton.project(env):
-        with cd(env.project_root):
-            cotton.run("yo hubot")
-            cotton.npm("hubot-slack")
+    cotton.upload_template_and_reload('defaults')
 
 
 @task
