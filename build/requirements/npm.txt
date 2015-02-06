@@ -1,0 +1,4 @@
+hubot
+coffee-script
+yo
+generator-hubot
