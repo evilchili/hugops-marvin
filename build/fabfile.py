@@ -17,6 +17,8 @@ def init():
     cotton.install_iojs()
 
     cotton.upload_template_and_reload('defaults')
+    cotton.upload_template_and_reload('marvin.sh')
+    cotton.upload_template_and_reload('supervisor_marvin')
 
     # make a directory to hold the file-brain
     cotton.sudo("mkdir -p /var/hubot")
@@ -30,3 +32,5 @@ def ship():
     """
     cotton.git_push()
     cotton.install_iojs_dependencies()
+    cotton.upload_template_and_reload('marvin.sh')
+    cotton.upload_template_and_reload('supervisor_marvin')

@@ -73,6 +73,18 @@ TEMPLATES += [
         "local_path": COTTON_PATH + "/../templates/defaults",
         "remote_path": "/etc/default/marvin",
     },
+    {
+        "name": "marvin.sh",
+        "local_path": COTTON_PATH + "/../templates/marvin.sh",
+        "remote_path": "%(virtualenv_path)s/bin/marvin",
+        "mode": "0755",
+    },
+    {
+        "name": "supervisor_marvin",
+        "local_path": COTTON_PATH + "/../templates/supervisor_marvin.conf",
+        "remote_path": "/etc/supervisor/conf.d/marvin.conf",
+        "reload_command": "supervisorctl reload"
+    },
 ]
 
 SLACK_TOKEN = os.environ.get('MARVIN_SLACK_TOKEN')
